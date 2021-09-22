@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://cube--chat.herokuapp.com",
+  "proxy": "https://cube-chat-backend-server.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
