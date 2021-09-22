@@ -2,15 +2,15 @@
   "name": "cube-chat",
   "version": "1.0.0",
   "description": "A Messaging App",
-  "main": "server.js",
-  "type": "module",
   "engines": {
     "node": "14.x"
   },
+  "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend && npm run build --prefix frontend",
+    "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },

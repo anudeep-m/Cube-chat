@@ -24,6 +24,8 @@ app.use('/api/messages', messageRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/friends', friendRoutes)
 
+const __dirname = path.resolve()
+
 //Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')))
