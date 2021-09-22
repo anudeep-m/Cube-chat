@@ -5,28 +5,8 @@ import './index.css'
 import { Provider } from 'react-redux'
 import App from './App'
 import store from './store'
-// import { Redirect } from 'react-router'
-// import { Router } from 'express'
+import reportWebVitals from './reportWebVitals'
 
-// const LoginCheck = () => {
-//   const isLogged = !!localStorage.getItem('userInfo')
-
-//   if (!isLogged) {
-//     return (
-//       <Router>
-//         <Redirect to='/login' />
-//       </Router>
-//     )
-//   } else {
-//     return (
-//       <>
-//         <Provider store={store}>
-//           <App />
-//         </Provider>
-//       </>
-//     )
-//   }
-// }
 
 ReactDOM.render(
   <Provider store={store}>
@@ -34,3 +14,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+
+reportWebVitals()
