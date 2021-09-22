@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: 'Vollkorn', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+code {
+  font-family: 'Vollkorn', serif;
+}
+
+:root {
+  --scrollBG: rgba(173, 110, 110, 0.212);
+  --thumbBG: #fb4f0075;
+}
+
+.chatlist,
+.friendlist {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.chatbox,
+.suggestionbox {
+  height: 90vh;
+}
+
+.suggestionbox {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatboxNav {
+  height: 10vh;
+  margin: 0;
+}
+.chatboxTop {
+  height: 78vh;
+  overflow-y: scroll;
+  margin: 0;
+}
+.chatboxBottom {
+  height: 12vh;
+}
+.chatboxBottom .textmessaearea {
+  border-radius: 20px;
+  height: 3rem;
+}
+
+.chatbox .namelink {
+  margin: 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.chatbox .messagecardbody {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.textmessaearea::-webkit-scrollbar,
+.chatlist::-webkit-scrollbar,
+.suggestionbox::-webkit-scrollbar,
+.friendlist::-webkit-scrollbar,
+.chatboxTop::-webkit-scrollbar {
+  width: 0px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollBG);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollBG);
+}
