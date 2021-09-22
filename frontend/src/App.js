@@ -20,8 +20,7 @@ function App() {
           />
           <Route
             path='/'
-            component={HomeScreen}
-            // component={userInfo ? HomeScreen : LoginScreen}
+            component={userInfo ? HomeScreen : LoginScreen}
             exact
           />
           <Route
