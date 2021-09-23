@@ -2,12 +2,18 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/database.js'
 import path from 'path'
-import { notFound, errorHandler } from './Middlewares/errorMiddleware.js'
+import { notFound, errorHandler } from './middlewares/errorMiddleware.js'
 import userRoutes from './routes/userRoutes.js'
 import conversationRoutes from './routes/conversationRoutes.js'
 import messageRoutes from './routes/messageRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import friendRoutes from './routes/friendRoutes.js'
+
+// const express = require('express')
+// const dotenv = require('dotenv')
+// const path = require('path')
+// const connectDB = require('./config/database')
+// const {notFound, errorHandler} = require('./')
 
 dotenv.config()
 
