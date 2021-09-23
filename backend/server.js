@@ -9,12 +9,6 @@ import messageRoutes from './routes/messageRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import friendRoutes from './routes/friendRoutes.js'
 
-// const express = require('express')
-// const dotenv = require('dotenv')
-// const path = require('path')
-// const connectDB = require('./config/database')
-// const {notFound, errorHandler} = require('./')
-
 dotenv.config()
 
 connectDB()

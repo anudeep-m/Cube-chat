@@ -4,7 +4,7 @@ import {
   getConversations,
   newConversation,
 } from '../controllers/conversationControllers.js'
-import { protect } from '../Middlewares/authMiddleware.js'
+import { protect } from '../middlewares/authMiddleware.js'
 
 const router = express.Router()
 

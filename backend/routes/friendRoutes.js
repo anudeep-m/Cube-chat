@@ -10,7 +10,7 @@ import {
   sendFriendRequest,
   unfriend,
 } from '../controllers/friendControllers.js'
-import { protect } from '../Middlewares/authMiddleware.js'
+import { protect } from '../middlewares/authMiddleware.js'
 
 const router = express.Router()
 
