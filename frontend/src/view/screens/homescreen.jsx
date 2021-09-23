@@ -61,10 +61,10 @@ const HomeScreen = ({ history }) => {
   return (
     <>
       <Row className='p-0 m-0'>
-        <Col md='3' className='p-0 m-0'>
+        <Col xs='3' className='p-0 m-0'>
           <ChatList />
         </Col>
-        <Col md='9' className='p-0 m-0'>
+        <Col xs='9' className='p-0 m-0'>
           <ChatBox onlineUsers={onlineUsers} />
         </Col>
       </Row>
