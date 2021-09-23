@@ -14,9 +14,7 @@ import { Image } from 'cloudinary-react'
 const RegisterScreen = ({ location, history }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [profilePicture, setProfilePicture] = useState(
-    'cube_chat/ar4bvmcdapmi0swjz5hv'
-  )
+  const [profilePicture, setProfilePicture] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState(null)
@@ -84,7 +82,6 @@ const RegisterScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage('Passwords do not match')
     } else {
-      !profilePicture && setProfilePicture('cube_chat/ar4bvmcdapmi0swjz5hv')
       dispatch(registerUser(name, email, profilePicture, password))
     }
   }
