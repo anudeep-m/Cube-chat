@@ -145,7 +145,7 @@ const ChatBox = ({ onlineUsers }) => {
             >
               <Form controlid='chatMessageInput'>
                 <Row>
-                  <Col xs='6' sm='8' md='10' className=' px-4 py-3 mx-4'>
+                  <Col xs='6' sm='8' md='9' className=' px-4 py-3 mx-4'>
                     <Form.Control
                       as='textarea'
                       style={{
@@ -160,7 +160,7 @@ const ChatBox = ({ onlineUsers }) => {
                     />
                   </Col>
                   <Col
-                    xs='6'
+                    xs='2'
                     sm='2'
                     md='1'
                     className='p-0 m-0 mx-2 d-flex align-items-center'
