@@ -35,7 +35,7 @@ const ChatBox = ({ onlineUsers }) => {
   const listMessages = async (convo) => {
     try {
       const { data } = await axios.get(
-        `/api/messages/${convo?.conversation._id}`
+        `${process.env.REACT_APP_SERVER_URL}/api/messages/${convo?.conversation._id}`
       )
       setMessageQueue(data)
     } catch (error) {
@@ -94,7 +94,7 @@ const ChatBox = ({ onlineUsers }) => {
     )
 
     try {
-      const { data } = await axios.post(`/api/messages`, message)
+      const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/messages`, message)
 
       setMessageQueue([...messageQueue, data])
       setNewMessage('')

@@ -19,7 +19,7 @@ export const listMessages = (convoId) => async (dispatch, getState) => {
       type: MESSAGE_LIST_REQUEST,
     })
 
-    const { data } = await axios.get(`/api/messages/${convoId}`)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/messages/${convoId}`)
 
     dispatch({
       type: MESSAGE_LIST_SUCCESS,
@@ -42,7 +42,7 @@ export const clearMessages = (convoId) => async (dispatch, getState) => {
       type: MESSAGE_LIST_CLEAR_REQUEST,
     })
 
-    await axios.delete(`/api/messages/${convoId}`)
+    await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/messages/${convoId}`)
 
     dispatch({ type: MESSAGE_LIST_CLEAR_SUCCESS })
   } catch (error) {
@@ -62,7 +62,7 @@ export const createMessage = (message) => async (dispatch, getState) => {
       type: MESSAGE_CREATE_REQUEST,
     })
 
-    const { data } = await axios.post(`/api/messages`, message)
+    const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/messages`, message)
 
     dispatch({
       type: MESSAGE_CREATE_SUCCESS,

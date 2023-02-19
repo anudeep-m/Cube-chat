@@ -21,7 +21,7 @@ const FriendCard = ({
 
   const getFriendDetails = async (friendId) => {
     try {
-      const { data } = await axios.get(`/api/users/${friendId}`)
+      const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/users/${friendId}`)
       setFriend(data)
     } catch (error) {
       const message =

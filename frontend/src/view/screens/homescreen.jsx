@@ -23,7 +23,7 @@ const HomeScreen = ({ history }) => {
   // socket.current = io('ws://localhost:7000')
 
   useEffect(() => {
-    socket.current = io('https://cube--chat-socket-server.herokuapp.com')
+    socket.current = io(process.env.REACT_APP_WEB_SOCKET_URL)
   }, [])
 
   useEffect(() => {

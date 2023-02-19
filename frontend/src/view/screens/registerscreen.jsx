@@ -63,7 +63,7 @@ const RegisterScreen = ({ location, history }) => {
         },
       }
       const { data } = await axios.post(
-        `/api/upload`,
+        `${process.env.REACT_APP_SERVER_URL}/api/upload`,
         JSON.stringify({ data: base64EncodedImage }),
         config
       )

@@ -18,7 +18,7 @@ export const changeCurrentChat =
       const friendId = conversation.members.find(
         (member) => member !== userInfo._id
       )
-      const { data } = await axios.get(`/api/users/${friendId}`)
+      const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/users/${friendId}`)
 
       const friend = data
 
@@ -51,7 +51,7 @@ export const listConversations = () => async (dispatch, getState) => {
 
     const userId = userInfo._id
 
-    const { data } = await axios.get(`/api/conversations/${userId}`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/conversations/${userId}`, config)
 
     dispatch({
       type: CONVERSATION_LIST_SUCCESS,
@@ -86,7 +86,7 @@ export const createConversation =
         },
       }
 
-      const { data } = await axios.post(`/api/conversations`, sendData, config)
+      const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/conversations`, sendData, config)
 
       dispatch({ type: CONVERSATION_CREATE_SUCCESS, payload: data })
     } catch (error) {
@@ -117,8 +117,8 @@ export const deleteConversation =
         },
       }
 
-      await axios.delete(`/api/conversations/${conversationId}`, config)
-      await axios.delete(`/api/messages/${conversationId}`)
+      await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/conversations/${conversationId}`, config)
+      await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/messages/${conversationId}`)
 
       dispatch({ type: CONVERSATION_DELETE_SUCCESS })
     } catch (error) {

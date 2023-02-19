@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/database.js'
 import path from 'path'
+import cors from "cors"
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js'
 import userRoutes from './routes/userRoutes.js'
 import conversationRoutes from './routes/conversationRoutes.js'
@@ -17,6 +18,14 @@ const app = express()
 
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://cube-chat.onrender.com"],
+    credentials: true,
+  })
+);
+
 
 app.use('/api/users', userRoutes)
 app.use('/api/conversations', conversationRoutes)

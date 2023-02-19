@@ -1,5 +1,5 @@
 # Cube Chat
-https://cube--chat.herokuapp.com
+https://cube-chat.onrender.com
  
 Cube Chat is a Messaging Application built using MERN Stack.
 

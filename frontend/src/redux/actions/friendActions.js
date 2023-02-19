@@ -48,7 +48,7 @@ export const getFriendDetails = (friendId) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/users/${friendId}`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/users/${friendId}`, config)
 
     dispatch({
       type: FRIEND_DETAILS_SUCCESS,
@@ -82,7 +82,7 @@ export const listFriends = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/friends`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/friends`, config)
 
     dispatch({
       type: FRIENDS_LIST_SUCCESS,
@@ -115,7 +115,7 @@ export const listFriendRequests = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/friends/requests`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/friends/requests`, config)
 
     dispatch({
       type: FRIEND_REQUESTS_LIST_SUCCESS,
@@ -148,7 +148,7 @@ export const listSentRequests = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/friends/sentRequests`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/friends/sentRequests`, config)
 
     dispatch({
       type: SENT_REQUESTS_LIST_SUCCESS,
@@ -181,7 +181,7 @@ export const listSuggestions = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/friends/suggestions`, config)
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/friends/suggestions`, config)
 
     dispatch({
       type: SUGGESTIONS_LIST_SUCCESS,
@@ -216,7 +216,7 @@ export const sendFriendRequest = (friendId) => async (dispatch, getState) => {
       },
     }
 
-    await axios.post(`/api/friends/sendFriendRequest`, sendData, config)
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/friends/sendFriendRequest`, sendData, config)
 
     dispatch({ type: SEND_FRIEND_REQUEST_SUCCESS })
   } catch (error) {
@@ -248,7 +248,7 @@ export const acceptFriendRequest = (friendId) => async (dispatch, getState) => {
       },
     }
 
-    await axios.post(`/api/friends/acceptFriendRequest`, sendData, config)
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/friends/acceptFriendRequest`, sendData, config)
 
     dispatch({ type: ACCEPT_FRIEND_REQUEST_SUCCESS })
   } catch (error) {
@@ -280,7 +280,7 @@ export const deleteFriendRequest = (friendId) => async (dispatch, getState) => {
       },
     }
 
-    await axios.post(`/api/friends/deleteFriendRequest`, sendData, config)
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/friends/deleteFriendRequest`, sendData, config)
 
     dispatch({ type: DELETE_FRIEND_REQUEST_SUCCESS })
   } catch (error) {
@@ -312,7 +312,7 @@ export const deleteSentRequest = (friendId) => async (dispatch, getState) => {
       },
     }
 
-    await axios.post(`/api/friends/deleteSentRequest`, sendData, config)
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/friends/deleteSentRequest`, sendData, config)
 
     dispatch({ type: DELETE_SENT_REQUEST_SUCCESS })
   } catch (error) {
@@ -345,10 +345,10 @@ export const unfriend =
         },
       }
 
-      await axios.post(`/api/friends/unfriend`, sendData, config)
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/friends/unfriend`, sendData, config)
       if (conversationId) {
-        await axios.delete(`/api/conversations/${conversationId}`, config)
-        await axios.delete(`/api/messages/${conversationId}`)
+        await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/conversations/${conversationId}`, config)
+        await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/messages/${conversationId}`)
       }
 
       dispatch({ type: UNFRIEND_SUCCESS })
