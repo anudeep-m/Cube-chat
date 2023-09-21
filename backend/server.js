@@ -21,7 +21,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://cube-chat.onrender.com" "https://cube-chat.anudeep.info"],
+    origin: ["http://localhost:3000", "https://cube-chat.onrender.com", "https://cube-chat.anudeep.info"],
     credentials: true,
   })
 );
